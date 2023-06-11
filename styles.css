@@ -1,0 +1,77 @@
+/* General styles */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Header styles */
+  
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .header h1 {
+    color: #333;
+  }
+  
+  /* Form styles */
+  
+  .form {
+    margin-bottom: 20px;
+  }
+  
+  .form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Results styles */
+  
+  .results {
+    margin-bottom: 20px;
+  }
+  
+  .results table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .results th,
+  .results td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .results th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .results tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap');
+        
+        body {
+            text-align: center;
+            font-family: 'Raleway', Arial, sans-serif;
+            margin: px; /* Add padding around the edges */
+            padding: 1;
+            background-color: #000000; /* black background color */
+            color: #ffffff; /* white font color */
+        }
+        
+        h1 {
+            color: #ffffff; /* white font color */
+            font-size: 72px;
+            font-weight: 900; /* setting the font weight to 900 for maximum boldness */
+            margin-top: 50px;
+            padding-top: 30px; /* adding padding to the top */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* adding a subtle text shadow */
+        }
+        
+        #logo {
+            width: 350px;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .body-text {
+            margin-bottom: 20px;
+        }
+        
+        .line {
+            border-top: 1px solid #ffffff; /* white line color */
+            margin: 20px auto;
+            width: 80%;
+        }
+        
+        .lab-text {
+            font-size: 30px;
+        }
+        
+        .lab-link {
+            color: #ffffff; /* white font color */
+            text-decoration: underline;
+        }
+        
+        .columns {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        
+        .column {
+            flex-basis: 30%; /* Adjust the width of each column as needed */
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #333333; /* Column background color */
+            border-radius: 10px;
+        }
+        
+        .column h3 {
+            color: #ffffff; /* white font color */
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .column p {
+            color: #ffffff; /* white font color */
+            font-size: 18px;
+        }
+        
+        form {
+            margin-top: 30px;
+        }
+        
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+        
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        table {
+            margin: 0 auto; /* Center the table horizontally */
+            color: #ffffff; /* Set table text color to white */
+            border-collapse: collapse; /* Collapse table borders */
+            width: 100%; /* Set table width to 100% of container */
+        }
+        
+        th, td {
+            padding: 8px; /* Add padding to table cells */
+            border-bottom: 1px solid #ffffff; /* Add white bottom border to table cells */
+        }
+        
+        th {
+            background-color: #444444; /* Set table header background color */
+        }
+        
+        tr:nth-child(even) {
+            background-color: #333333; /* Set even row background color */
+        }
+        
+        tr:hover {
+            background-color: #555555; /* Set hover row background color */
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <img id="logo" src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+    <p class="lab-text">A tool from the <a href="https://www.cembrowskilab.com" class="lab-link">Cembrowski Lab</a> at the University of British Columbia</p>
+    
+    <div class="body-text">
+        <p>Protein Search is an automated code-free tool for scientists and clinicians to search through human antibodies labeling neurons and glia in the brain.</p>
+        <p>Protein Search is directly compatible with Seurat's "FindMarkers()" function and returns a dataframe of antibodies based on information from the <a href="https://www.proteinatlas.org/" class="lab-link"> Human Protein Atlas</a></p>
+    </div>
+
+    <div class="columns">
+        <div class="column">
+            <h3><a href="#search">Search</a></h3>
+            <p>Use this automated tool to search through thousands of human antibodies at once</p>
+        </div>
+
+        <div class="column">
+            <h3><a href="#visualize">Visualize</a></h3>
+            <p>Visualize your results with an interactive UMAP, spatial plotting, and more</p>
+        </div>
+
+        <div class="column">
+            <h3><a href="#export">Export</a></h3>
+            <p>Export your results to csv automatically</p>
+        </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div id="search">
+        <h2>Search:</h2>
+        <p>Input your csv below and click search</p>
+        <form method="POST" action="/search" enctype="multipart/form-data">
+            <input type="file" name="csv_file">
+            <br>
+            <input type="submit" value="SEARCH">
+        </form>
+    </div>
+
+    <div class="line"></div>
+
+    <h2>CSV data</h2>
+    {% if csv_data %}
+    <!-- Render the csv_data variable as HTML -->
+    {{ csv_data|safe }}
+    {% else %}
+        <p>No data to display.</p>
+    {% endif %}
+</body>
+</html>

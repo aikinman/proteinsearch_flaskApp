@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .button-container button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .button-container button:hover {
+      background-color: #45a049;
+    }
+
+    hr {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
+
+    #dataframe {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Results</h1>
+    <div class="button-container">
+      <form action="/download_csv" method="get">
+        <input type="hidden" name="csv_data" value="{{ csv_data }}">
+        <button type="submit">Download CSV</button>
+      </form>
+    </div>
+    <hr>
+    <h2>Dataframe</h2>
+    <div id="dataframe"></div>
+  </div>
+
+  <script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.1.min.js"></script>
+  <script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.4

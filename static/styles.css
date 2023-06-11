@@ -1,0 +1,71 @@
+/* Example styles */
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+.header {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+
+.header h1 {
+  color: #333;
+}
+
+/* Form styles */
+.form {
+  margin: 20px auto;
+  max-width: 400px;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.form button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Results styles */
+.results {
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.results table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.results th,
+.results td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.results th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: left;
+}
+
+.results tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
